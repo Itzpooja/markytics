@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Markytics</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://bootswatch.com/cosmo/">
+      <style type="text/css">
+        .div1{
+          display: flex;
+          color: #595959;
+          justify-content: space-between;
+          width: 400px;
+        }
+        span{
+          width: 6px;
+          height: 3px;
+          padding-right: 20px;
+        }
+        .div1>p{
+          margin: 0px;
+          margin-top: 3px;
+        }
+        .div2{
+          display: flex;
+        }
+        .div2>p{
+          margin: 0px;
+          margin-top: 3px;
+        }
+        nav{
+          display: flex;
+          justify-content: space-between;
+          color: #595959;
+          margin-top: 15px;
+        }
+        hr{
+          color: #595959;
+        }
+        .select1{
+          width: 100%;
+          border:none;
+          border-bottom: 1px solid grey;
+          height: 50px;
+        }
+        .select1{
+          font-size: 25px;
+          font-family: 'Roboto', sans-serif;
+                }
+        .form-group{
+          margin:10px;
+
+        }
+      </style>
+</head>
+<body>
+  <form class="form" method="POST" action="/save/">
+    {% csrf_token %}
+  <nav>
+    <div class="div1">
+      <div class="div2">
+        <span class="material-icons">
+        settings
+        </span>
+        <p>Submit for verification</p>
+      </div>
+
+      <div class="div2" style="color: #4d94ff;">
+        <span class="material-icons">
+        save
+        </span>
+        <p><input type="submit" value="Save" ></p>
+      </div>
+      
+      <p><a href="/save_exit/" style="color:#595959; ">Save & Exit</a></p>
+      <p>Cancel</p>
+    </div>
+    <div>
+      <span class="material-icons">
+      settings
+      </span>
+      <span class="material-icons">
+      save
+      </span>
+      <span class="material-icons">
+      local_printshop
+      </span>
+    </div>
+  </nav>
+  <hr>
+  <div>
+    <h1 style="font-family: 'Roboto', sans-serif;font-weight: bold;">New Master Incident </h1>
+    <select class="select1">
+      <option>
+        <p style="font-weight: 90px;font-size: large;height: 30px;">Initial Reporting</p>
+      </option>
+    </select>
+    <div class="form-group">
+      <label style="margin-left: 140px;">*Location</label>
+      <select style="width: 300px;height: 30px;margin-left: 10px;" name="location">
+        <option style="width: 300px;" value="Corporate Headoffice">Corporate Headoffice</option>
+      </select>
+    </div>
+    <div class="form-group" style="display:flex;align-items: flex-start;">
+      <label style="margin-left: 70px;">*Incident Description</label>
+      <textarea class="form-control" style="margin-left: 10px;" name="incident_description"></textarea>
+    </div>
+    
+    <div class="form-group">
+      <label style="margin-left: 30px;">*Date and Time of Incident</label>
+      <input type="Date" class="form-control" style="margin-left: 10px;" name="date">
+      <input type="Time" class="form-control" name="time">
+    </div>
+
+    <div class="form-group" style="display:flex;align-items: flex-start;width: 100%">
+      <label style="margin-left: 80px;">*Incident Location</label>
+      <textarea class="form-control" style="width: 900px;margin-left: 15px;" name="incident_location"></textarea>
+    </div>
+  
+  <div>
+    <label style="margin-left: 100px;">*Initial Severity</label>
+        <select style="width: 300px;height: 30px;margin-left: 15px;" name="initial_severity">
+          <option style="width: 300px;" value="Corporate Headoffice">Corporate Headoffice</option>
+        </select>
+  </div>
+  <div class="form-group" style="display:flex;align-items: flex-start;width: 100%">
+      <label style="margin-left: 90px;">Suspected Cause</label>
+      <textarea class="form-control" style="width: 900px;margin-left: 15px;" name="suspected_cause"></textarea>
+    </div>
+    <div class="form-group" style="display:flex;align-items: flex-start;width: 100%">
+      <label style="margin-left: 40px;">Immediate Actions taken</label>
+      <textarea class="form-control" style="width: 900px;margin-left: 15px;" name="immediate_actions_taken"></textarea>
+    </div>
+    <div class="form-group" style="display:flex;align-items: flex-start;width: 100%">
+      <label style="margin-left: 75px;">Sub Incident Types</label>
+      <div style="display:flex;flex-direction:column;">
+        <label><input type="checkbox" value="Enviromental Incident" name="sub_incident_types" style="margin-left: 15px;">Enviromental Incident</label>
+        <label><input type="checkbox" value="Injury/Illness" name="sub_incident_types" style="margin-left: 15px;">Injury/Illness</label>
+        <label><input type="checkbox" value="Property Damage" style="margin-left: 15px;" name="sub_incident_types">Property Damage</label>
+        <label><input type="checkbox" value="Vehicle" style="margin-left: 15px;" name="sub_incident_types">Vehicle</label>
+      </div>
+    </div>
+    <div class="form-group">
+      <label style="margin-left: 100px;">*Reported By</label>
+      <input type="text" class="form-control" style="margin-left: 15px;" name="reported_by">
+    </div>
+    </div>
+</form>
+<form action="/view_all/">
+  <input type="submit" value="View" style="margin-left: 1300px;">
+</form>
+</body>
+</html>

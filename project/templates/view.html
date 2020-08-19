@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+			rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="https://bootswatch.com/4/yeti/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap" rel="stylesheet">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/1.5.5/jquery.smooth-scroll.min.js"></script>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+		<link rel="stylesheet" href="/static/home.css/">
+		<link href='https://fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
+		<link href="https://fonts.googleapis.com/css2?family=Chelsea+Market&display=swap" rel="stylesheet"> 
+	{% block head %}{% endblock %}
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<div class="container">
+	<a class="navbar-brand" href="#">Markytics</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	
+</div>
+</nav>
+	{% for information in information %}
+		<div class="card" style="width: 1300px;box-shadow: 5px 5px 3px;margin-left: 20px;">
+			<div style="display: flex;">
+			<label>Location:</label>
+			<p>{{information.location}}</p>
+		</div>
+		<div style="display: flex;"> 
+			<label>Incident Description:</label>
+			<p>{{information.incident_description}}</p>
+		</div>
+		<div style="display: flex;">
+			<label>Date:</label>
+			<p>{{information.date}}</p>
+		</div>
+		<div style="display: flex;">
+			<label>Time:</label>
+			<p>{{information.time}}</p>
+		</div>
+		<div style="display: flex;">
+			<label>Incident Location:</label>
+			<p>{{information.incident_location}}</p>
+		</div>
+		<div style="display: flex;">
+			<label>Initial Severity:</label>
+			<p>{{information.initial_severity}}</p>
+		</div>
+		<div style="display: flex;">
+			<label>Suspected Cause:</label>
+			<p>{{information.suspected_cause}}</p>
+		</div>
+		<div style="display: flex;">
+			<label>Immediate Actions:</label>
+			<p>{{information.immediate_actions}}</p>
+		</div>
+		<div style="display: flex;">
+			<label>Sub Incident Types:</label>
+			<p>{{information.sub_incidents_types}}</p>
+		</div>
+		<div style="display: flex;">
+			<label>Reported By:</label>
+			<p>{{information.reported_by}}</p>
+		</div>
+	</div>
+<br><br>
+		{% endfor %}
+	
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+</body>
+</html>
